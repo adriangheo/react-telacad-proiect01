@@ -23,9 +23,11 @@ class UserAddForm extends React.Component {
         this.setState({isGoldClient: event.target.checked});
     }
 
-    updateEmail(event) {
+    updateSalariu(event) {
         this.setState({salariu: event.target.value});
     }
+
+    
 
     // agh start
     logNewUsrData(){
@@ -36,7 +38,7 @@ class UserAddForm extends React.Component {
 
 
     render() {
-        const {name, email, isGoldClient} = this.state;
+        const {name, email, isGoldClient, salariu} = this.state;
 
         return (
             <div>
@@ -44,7 +46,7 @@ class UserAddForm extends React.Component {
 
                 <form
                 className="user-add-form"
-                onSubmit={(event) => this.props.submitAddForm(event, name, email, isGoldClient)}
+                onSubmit={(event) => this.props.submitAddForm(event, name, email, isGoldClient, salariu)}
             >
                 <h2>Adauga utilizatori:</h2>
                 <label htmlFor="name">Nume:</label>
@@ -72,7 +74,7 @@ class UserAddForm extends React.Component {
                 <input
                     type="number"
                     id="salariu"
-                    onChange={(event) => this.updateEmail(event)}
+                    onChange={(event) => this.updateSalariu(event)}
                 />
                 {/* agh end */}
 
