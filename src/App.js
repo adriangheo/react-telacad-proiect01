@@ -56,6 +56,7 @@ class App extends React.Component {
         ]
       }
     });
+    event.target.reset();
   }
 
   logAllUsersData(){
