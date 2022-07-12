@@ -57,10 +57,23 @@ class App extends React.Component {
     });
   }
 
+  logAllUsersData(){
+    this.state.users.map((user, index)=>{
+      console.log(index);
+      console.log(user.name);
+      console.log(user.email);
+      console.log(user.isGoldClient);
+      console.log('---')
+    })
+  }
+
   render() {
     return(
       <div className="app" style={{background: this.state.background}}>
         <h1>Admin panel - Proiectul 1</h1>
+        {/* agh start */}
+        <button onClick={()=>{this.logAllUsersData()}}>App.js - Log all users</button>
+        {/* agh end */}
         <UserAddForm submitAddForm={(event, name, email, isGoldClient) => this.submitAddForm(event, name, email, isGoldClient)}/>
         <UserList users={this.state.users}/>
         <input type="color" onChange={(event) => this.changeColor(event)}/>

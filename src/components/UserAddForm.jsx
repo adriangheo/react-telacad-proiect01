@@ -6,7 +6,8 @@ class UserAddForm extends React.Component {
         this.state = {
             name: '',
             email: '',
-            isGoldClient: false
+            isGoldClient: false,
+            salariu: 0
         };
     }
 
@@ -22,11 +23,26 @@ class UserAddForm extends React.Component {
         this.setState({isGoldClient: event.target.checked});
     }
 
+    updateEmail(event) {
+        this.setState({salariu: event.target.value});
+    }
+
+    // agh start
+    logNewUsrData(){
+        console.log('uuuu');
+        console.log(this.state);
+    }
+    // agh end
+
+
     render() {
         const {name, email, isGoldClient} = this.state;
 
         return (
-            <form
+            <div>
+                <button onClick={()=>{this.logNewUsrData()}}>UserAddForm.jsx -- LogUsrData</button>
+
+                <form
                 className="user-add-form"
                 onSubmit={(event) => this.props.submitAddForm(event, name, email, isGoldClient)}
             >
@@ -51,8 +67,20 @@ class UserAddForm extends React.Component {
                     onChange={(event) => this.updateIsGoldClient(event)}
                 />
 
+                {/* agh start */}
+                <label htmlFor="salariu">Salariu:</label>
+                <input
+                    type="number"
+                    id="salariu"
+                    onChange={(event) => this.updateEmail(event)}
+                />
+                {/* agh end */}
+
+
                 <input type="submit" value="Introdu utilizatorul"/>
-            </form>
+                </form>
+            </div>
+            
         )
     }
 }
