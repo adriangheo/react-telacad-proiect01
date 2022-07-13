@@ -40,7 +40,7 @@ class App extends React.Component {
     return maxId;
   }
 
-  submitAddForm(event, name, email, isGoldClient, salariu) {
+  submitAddForm(event, name, email, isGoldClient, salariu, imagine) {
     event.preventDefault();
     this.setState(prevState => {
       return {
@@ -51,7 +51,8 @@ class App extends React.Component {
             name,
             email,
             isGoldClient,
-            salariu
+            salariu,
+            imagine
           }
         ]
       }
@@ -66,6 +67,7 @@ class App extends React.Component {
       console.log(user.email);
       console.log(user.isGoldClient);
       console.log(user.salariu);
+      console.log(user.imagine);
       console.log('---')
     })
   }
@@ -77,7 +79,7 @@ class App extends React.Component {
         {/* agh start */}
         <button onClick={()=>{this.logAllUsersData()}}>App.js - Log all users</button>
         {/* agh end */}
-        <UserAddForm submitAddForm={(event, name, email, isGoldClient, salariu) => this.submitAddForm(event, name, email, isGoldClient, salariu)}/>
+        <UserAddForm submitAddForm={(event, name, email, isGoldClient, salariu, imagine) => this.submitAddForm(event, name, email, isGoldClient, salariu, imagine)}/>
         <UserList users={this.state.users}/>
         <input type="color" onChange={(event) => this.changeColor(event)}/>
       </div>

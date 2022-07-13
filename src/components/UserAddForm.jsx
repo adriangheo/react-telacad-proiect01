@@ -7,7 +7,8 @@ class UserAddForm extends React.Component {
             name: '',
             email: '',
             isGoldClient: false,
-            salariu: 0
+            salariu: 0,
+            imagine: ''
         };
     }
 
@@ -27,6 +28,10 @@ class UserAddForm extends React.Component {
         this.setState({salariu: event.target.value});
     }
 
+    updateImagine(event) {
+        this.setState({imagine: event.target.value});
+    }
+
     
 
     // agh start
@@ -38,7 +43,7 @@ class UserAddForm extends React.Component {
 
 
     render() {
-        const {name, email, isGoldClient, salariu} = this.state;
+        const {name, email, isGoldClient, salariu, imagine} = this.state;
 
         return (
             <div>
@@ -46,7 +51,7 @@ class UserAddForm extends React.Component {
 
                 <form
                 className="user-add-form"
-                onSubmit={(event) => this.props.submitAddForm(event, name, email, isGoldClient, salariu)}
+                onSubmit={(event) => this.props.submitAddForm(event, name, email, isGoldClient, salariu, imagine)}
             >
                 <h2>Adauga utilizatori:</h2>
                 <label htmlFor="name">Nume:</label>
@@ -75,6 +80,13 @@ class UserAddForm extends React.Component {
                     type="number"
                     id="salariu"
                     onChange={(event) => this.updateSalariu(event)}
+                />
+
+                <label htmlFor="imagine">URL Imagine:</label>
+                <input
+                    type="text"
+                    id="imagine"
+                    onChange={(event) => this.updateImagine(event)}
                 />
                 {/* agh end */}
 

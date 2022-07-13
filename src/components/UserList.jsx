@@ -14,6 +14,7 @@ function UserList(props) {
                     email={ user.email }
                     isGoldClient={ user.isGoldClient }
                     salariu={ user.salariu }
+                    imagine={user.imagine }
                     key={ index }
                 />
             })}
