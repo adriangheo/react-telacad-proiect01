@@ -2,6 +2,7 @@ import React from 'react';
 import UserList from './components/UserList';
 import UserAddForm from './components/UserAddForm';
 import './App.css';
+import PostList from './components/PostList';
 
 class App extends React.Component {
   constructor() {
@@ -98,15 +99,7 @@ class App extends React.Component {
         <UserAddForm submitAddForm={(event, name, email, isGoldClient, salariu, imagine) => this.submitAddForm(event, name, email, isGoldClient, salariu, imagine)}/>
         <UserList users={this.state.users}/>
         <input type="color" onChange={(event) => this.changeColor(event)}/>
-        {
-          this.state.posts.map((singlePost, index)=>{
-            console.log(singlePost.title)
-            return(<div>
-              <p><b>Post Title:</b> {singlePost.title}</p>
-              <p>{singlePost.body}</p>
-            </div>)
-          })
-        }
+        <PostList posts={this.state.posts}/>
       </div>
     );
   }
