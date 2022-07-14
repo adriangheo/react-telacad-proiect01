@@ -9,7 +9,8 @@ class App extends React.Component {
     this.state = {
       background: 'white',
       color: 'black',
-      users: []
+      users: [],
+      posts: []
     };
   }
 
@@ -22,6 +23,11 @@ class App extends React.Component {
           user.isGoldClient = false;
         });
         this.setState({users: data});
+      });
+      fetch('https://jsonplaceholder.typicode.com/posts')
+      .then(response => response.json())
+      .then(data => {
+        this.setState({posts: data});
       })
   }
 
@@ -92,6 +98,15 @@ class App extends React.Component {
         <UserAddForm submitAddForm={(event, name, email, isGoldClient, salariu, imagine) => this.submitAddForm(event, name, email, isGoldClient, salariu, imagine)}/>
         <UserList users={this.state.users}/>
         <input type="color" onChange={(event) => this.changeColor(event)}/>
+        {
+          this.state.posts.map((singlePost, index)=>{
+            console.log(singlePost.title)
+            return(<div>
+              <p><b>Post Title:</b> {singlePost.title}</p>
+              <p>{singlePost.body}</p>
+            </div>)
+          })
+        }
       </div>
     );
   }
