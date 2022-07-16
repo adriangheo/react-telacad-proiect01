@@ -69,6 +69,8 @@ class App extends React.Component {
     });
     event.target.reset();
   }
+  
+
 
   handleColorChange(event){
     console.log(event.target.value);
@@ -103,8 +105,14 @@ class App extends React.Component {
     })
   }
 
+  removeUser = (index) => {
+    this.setState((prevState) => ({
+      users: prevState.users.filter((_, i) => i !== index)
+    }));
+  }
 
-  function
+
+
 
   render() {
     return(
@@ -114,6 +122,7 @@ class App extends React.Component {
         <button onClick={()=>{this.logAllUsersData()}}>App.js - Log all users</button>
         {/* agh end */}
         <br/><br/>
+        <button onClick={()=>{this.removeUser(0)}}>RemoveUser1</button>
         <label>Font Color: </label>
         <input id="FontColor" type="color" onChange={(event)=>this.handleColorChange(event)}></input>
         <UserAddForm submitAddForm={(event, name, email, isGoldClient, salariu, imagine) => this.submitAddForm(event, name, email, isGoldClient, salariu, imagine)}/>
