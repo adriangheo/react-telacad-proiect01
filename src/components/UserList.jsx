@@ -4,6 +4,7 @@ import UserItem from './UserItem';
 function UserList(props) {
     const { users } = props;
 
+
     return (
         <div>
             <h2>Lista utilizatorilor:</h2>
@@ -16,6 +17,7 @@ function UserList(props) {
                     salariu={ user.salariu }
                     imagine={user.imagine }
                     key={ index }
+                    getUserKey={(key) => props.getUserKey(key)}
                 />
             })}
         </div>

@@ -131,7 +131,7 @@ class App extends React.Component {
         <button onClick={()=>{this.hidePostAndShowUsers()}}>ShowUsers</button>
      
         { this.state.isUserListVisible
-          ? <UserList users={this.state.users}/> 
+          ? <UserList users={this.state.users}  getUserKey={(key) => this.getUserKey(key)}/> 
           : <PostList posts={this.state.posts}/> }
         
         <input type="color" onChange={(event) => this.changeColor(event)}/>
