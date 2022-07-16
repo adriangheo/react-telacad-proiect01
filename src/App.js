@@ -80,9 +80,9 @@ class App extends React.Component {
     let { isUserListVisible } = this.state;
 
     if(isUserListVisible == true){
-      this.state.isUserListVisible = false
+      this.setState({isUserListVisible: false})
     }else{
-      this.state.isUserListVisible = true
+      this.setState({isUserListVisible: true})
     }
     
   }
