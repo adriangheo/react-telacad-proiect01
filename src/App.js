@@ -112,7 +112,7 @@ class App extends React.Component {
   }
 
   getUserKey = (key) => {
-    console.log("key afasgf:",key)
+    console.log("user key (it actually works :) :", key)
   }
 
 

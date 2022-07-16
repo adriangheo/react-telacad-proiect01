@@ -2,11 +2,9 @@ import React from 'react';
 import UserItem from './UserItem';
 
 function UserList(props) {
-    const { users } = props;
+    const { users, getUserKey } = props;
 
-    const getUserKey = (key) => {
-        console.log("key...uhu...: ",key)
-    }
+
 
     return (
         <div>
