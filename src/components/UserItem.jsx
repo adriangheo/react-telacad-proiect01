@@ -1,6 +1,5 @@
 import React from 'react';
 import NoUserIcon from '../assets/images/no-user-icon.png';
-import './UserItem.css'
 
 
 function UserItem(props) {
@@ -11,7 +10,7 @@ function UserItem(props) {
     // }
 
     return (
-        <div className='UserItem col-12 col-md-4'>
+        <div className='UserItem col-lg-4 col-md-6 col-sm-12'>
             <h3>{ name }</h3>
             <p>id {id}</p>
             <p>{ email }</p>

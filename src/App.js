@@ -21,7 +21,7 @@ class App extends React.Component {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
       .then(data => {
-        data = data.filter(user => user.id < 5);
+        data = data.filter(user => user.id < 7);
         data.forEach(user => {
           user.isGoldClient = false;
         });
