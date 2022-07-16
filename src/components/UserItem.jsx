@@ -4,11 +4,11 @@ import NoUserIcon from '../assets/images/no-user-icon.png';
 
 
 function UserItem(props) {
-    const {id, name, email, isGoldClient, salariu, imagine} = props;
+    const {id, name, email, isGoldClient, salariu, imagine, getUserKey} = props;
     
-    const getUserKey = (key) => {
-        console.log("key",key)
-    }
+    // const getUserKey = (key) => {
+    //     console.log("key",key)
+    // }
 
     return (
         <div>
