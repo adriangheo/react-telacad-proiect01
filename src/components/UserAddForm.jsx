@@ -58,6 +58,7 @@ class UserAddForm extends React.Component {
                 <input
                     type="text"
                     name="name"
+                    minLength={3}
                     onChange={(event) => this.updateName(event)}
                 />
                 <label htmlFor="email">Email:</label>
