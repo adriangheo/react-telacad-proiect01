@@ -4,9 +4,9 @@ import './UserItem.css'
 
 
 function UserItem(props) {
-    const {id, name, email, isGoldClient, salariu, imagine, getUserEmail} = props;
+    const {id, name, email, isGoldClient, salariu, imagine, deleteUserByEmail} = props;
     
-    // const getUserEmail = (email) => {
+    // const deleteUserByEmail = (email) => {
     //     console.log("email", email);
     // }
 
@@ -26,7 +26,7 @@ function UserItem(props) {
                 src={ imagine === undefined ? NoUserIcon : imagine }
                 alt="alt text"
             />
-            <button onClick={()=>{getUserEmail(email)}}>get user email</button>
+            <button onClick={()=>{deleteUserByEmail(email)}}>Delete User</button>
 
         </div>
     );

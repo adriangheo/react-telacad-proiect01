@@ -3,7 +3,7 @@ import UserItem from './UserItem';
 import './UserList.css'
 
 function UserList(props) {
-    const { users, getUserEmail } = props;
+    const { users, deleteUserByEmail } = props;
 
 
 
@@ -20,7 +20,7 @@ function UserList(props) {
                     salariu={ user.salariu }
                     imagine={user.imagine }
                     key={ index }
-                    getUserEmail={(email) => getUserEmail(email)}
+                    deleteUserByEmail={(email) => deleteUserByEmail(email)}
                     
                 />
             })}

@@ -112,7 +112,7 @@ class App extends React.Component {
   }
 
 
-  getUserEmail = (email) => {
+  deleteUserByEmail = (email) => {
     console.log("email", email);
 
     this.setState((prevState) => ({
@@ -137,7 +137,7 @@ class App extends React.Component {
         <button onClick={()=>{this.hidePostAndShowUsers()}}>ShowUsers</button>
      
         { this.state.isUserListVisible
-          ? <UserList users={this.state.users}  getUserEmail={(email) => this.getUserEmail(email)}/> 
+          ? <UserList users={this.state.users}  deleteUserByEmail={(email) => this.deleteUserByEmail(email)}/> 
           : <PostList posts={this.state.posts}/> }
         
         <input type="color" onChange={(event) => this.changeColor(event)}/>
