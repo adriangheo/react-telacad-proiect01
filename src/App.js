@@ -50,24 +50,44 @@ class App extends React.Component {
     return maxId;
   }
 
+
+  emailIsValid(email){
+    const regex = /.*@.*\..*/i;
+    if(!email || regex.test(email) === false){
+        this.setState({
+            error: "Email is not valid"
+        });
+        return false;
+    }
+    return true;
+  }
+
   submitAddForm(event, name, email, isGoldClient, salariu, imagine) {
     event.preventDefault();
-    this.setState(prevState => {
-      return {
-        users: [
-          ...prevState.users,
-          {
-            id: this.getMaxId(prevState.users) + 1,
-            name,
-            email,
-            isGoldClient,
-            salariu,
-            imagine
-          }
-        ]
-      }
-    });
-    event.target.reset();
+
+    if(this.emailIsValid(email)){
+      this.setState(prevState => {
+        return {
+          users: [
+            ...prevState.users,
+            {
+              id: this.getMaxId(prevState.users) + 1,
+              name,
+              email,
+              isGoldClient,
+              salariu,
+              imagine
+            }
+          ]
+        }
+      });
+      event.target.reset();
+    }else{
+      console.log("error");
+      return false;
+    }
+
+
   }
   
 
