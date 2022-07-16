@@ -121,6 +121,10 @@ class App extends React.Component {
 
   getUserEmail = (email) => {
     console.log("email", email);
+
+    this.setState((prevState) => ({
+      users: prevState.users.filter((user) => user.email !== email)
+    }));
   }
 
   render() {
