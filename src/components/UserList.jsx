@@ -1,5 +1,6 @@
 import React from 'react';
 import UserItem from './UserItem';
+import './UserList.css'
 
 function UserList(props) {
     const { users, getUserKey } = props;
@@ -7,7 +8,7 @@ function UserList(props) {
 
 
     return (
-        <div>
+        <div className='UserList'>
             <h2>Lista utilizatorilor:</h2>
             { users.map((user, index) => {
                 console.log("getUserKey: ", getUserKey)

@@ -8,7 +8,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      background: 'white',
+      background: 'lightskyblue',
       color: 'black',
       users: [],
       posts: [],
@@ -21,7 +21,7 @@ class App extends React.Component {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
       .then(data => {
-        data = data.filter(user => user.id < 4);
+        data = data.filter(user => user.id < 5);
         data.forEach(user => {
           user.isGoldClient = false;
         });
