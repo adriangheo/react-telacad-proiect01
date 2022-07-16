@@ -13,7 +13,7 @@ class App extends React.Component {
       users: [],
       posts: [],
       isUserListVisible: true,
-      isPostsListVisible: true
+      isPostsListVisible: false
     };
   }
 
@@ -74,18 +74,22 @@ class App extends React.Component {
     console.log(event.target.value);
     this.setState({color: event.target.value})
   }
-  
-  switchUserListVisibility = () => {
-    console.log('isUserListVisible:', this.state.isUserListVisible)
-    let { isUserListVisible } = this.state;
 
-    if(isUserListVisible == true){
-      this.setState({isUserListVisible: false})
-    }else{
-      this.setState({isUserListVisible: true})
+
+  hideUsersAndShowPosts = () => {
+    let { isUserListVisible } = this.state;
+    if(isUserListVisible === false){
+      this.setState({isUserListVisible: true, isPostsListVisible: false})
     }
-    
   }
+
+  hidePostAndShowUsers = () => {
+    let { isPostsListVisible } = this.state;
+    if(isPostsListVisible === false){
+      this.setState({isUserListVisible: false, isPostsListVisible: true})
+    }
+  }
+
 
   logAllUsersData(){
     this.state.users.map((user, index)=>{
@@ -113,15 +117,16 @@ class App extends React.Component {
         <label>Font Color: </label>
         <input id="FontColor" type="color" onChange={(event)=>this.handleColorChange(event)}></input>
         <UserAddForm submitAddForm={(event, name, email, isGoldClient, salariu, imagine) => this.submitAddForm(event, name, email, isGoldClient, salariu, imagine)}/>
-        
-        <button onClick={()=>{this.switchUserListVisibility()}}>switchUserListVisibility</button>
-
+        <br/><br/>
+        <button onClick={()=>{this.hideUsersAndShowPosts()}}>ShowPosts</button>
+        <button onClick={()=>{this.hidePostAndShowUsers()}}>ShowUsers</button>
+     
         { this.state.isUserListVisible
           ? <UserList users={this.state.users}/> 
-          : false }
+          : <PostList posts={this.state.posts}/> }
         
         <input type="color" onChange={(event) => this.changeColor(event)}/>
-        <PostList posts={this.state.posts}/>
+        
       </div>
     );
   }
