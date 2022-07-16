@@ -112,7 +112,11 @@ class App extends React.Component {
   }
 
   getUserKey = (key) => {
-    console.log("user key (it actually works :) :", key)
+    console.log("user key (it actually works :) :", key);
+
+    this.setState((prevState) => ({
+      users: prevState.users.filter((_, i) => i !== key)
+    }));
   }
 
 
