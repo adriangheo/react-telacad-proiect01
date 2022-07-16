@@ -113,24 +113,6 @@ class App extends React.Component {
   }
 
 
-  logAllUsersData(){
-    this.state.users.map((user, index)=>{
-      console.log(index);
-      console.log(user.name);
-      console.log(user.email);
-      console.log(user.isGoldClient);
-      console.log(user.salariu);
-      console.log(user.imagine);
-      console.log('---')
-    })
-  }
-
-  removeUser = (index) => {
-    this.setState((prevState) => ({
-      users: prevState.users.filter((_, i) => i !== index)
-    }));
-  }
-
 
   deleteUserByEmail = (email) => {
     console.log("email", email);
@@ -144,15 +126,13 @@ class App extends React.Component {
     return(
       <div className="app" style={{background: this.state.background, color: this.state.color}}>
         <h1>Admin panel - Proiectul 1</h1>
-        {/* agh start */}
-        <button className="btn btn-primary" onClick={()=>{this.logAllUsersData()}}>App.js - Log all users</button>
-        {/* agh end */}
-        <br/><br/>
-        <button className="btn btn-primary" onClick={()=>{this.removeUser(0)}}>RemoveUser1</button>
-        <label>Font Color: </label>
-        <input id="FontColor" type="color" onChange={(event)=>this.handleColorChange(event)}></input>
+
+        <label htmlFor='FontColor' style={{marginRight: '6px'}}>Font Color: </label>
+        <input id="FontColor" type="color" style={{marginRight: '16px'}} onChange={(event)=>this.handleColorChange(event)}></input>
+        <label htmlFor='background-color' style={{marginRight: '6px'}}>Backround Color: </label>
+        <input id='background-color' type="color" onChange={(event) => this.changeColor(event)}/>
+
         <UserAddForm submitAddForm={(event, name, email, isGoldClient, salariu, imagine) => this.submitAddForm(event, name, email, isGoldClient, salariu, imagine)}/>
-        <br/><br/>
         <button className="btn btn-primary" onClick={()=>{this.hideUsersAndShowPosts()}}>ShowPosts</button>
         <button className="btn btn-primary" onClick={()=>{this.hidePostAndShowUsers()}}>ShowUsers</button>
      
@@ -160,7 +140,7 @@ class App extends React.Component {
           ? <UserList users={this.state.users}  deleteUserByEmail={(email) => this.deleteUserByEmail(email)}/> 
           : <PostList posts={this.state.posts}/> }
         
-        <input type="color" onChange={(event) => this.changeColor(event)}/>
+
         
       </div>
     );

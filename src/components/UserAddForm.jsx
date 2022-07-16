@@ -47,8 +47,6 @@ class UserAddForm extends React.Component {
 
         return (
             <div className='mb-3'>
-                <button className="btn btn-primary" onClick={()=>{this.logNewUsrData()}}>UserAddForm.jsx -- LogUsrData</button>
-
                 <form
                 className="user-add-form"
                 onSubmit={(event) => this.props.submitAddForm(event, name, email, isGoldClient, salariu, imagine)}
@@ -96,7 +94,7 @@ class UserAddForm extends React.Component {
                 {/* agh end */}
 
 
-                <input className="btn btn-primary" type="submit" value="Introdu utilizatorul"/>
+                <input className="btn btn-primary" type="submit" value="Introdu utilizatorul"  style={{marginTop: '16px'}}/>
                 </form>
             </div>
             

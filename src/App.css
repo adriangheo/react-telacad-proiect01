@@ -1,6 +1,7 @@
 /* Daca vrem ca aplicatia sa ocupe intreg viewport-ul. */
 .app {
   min-height: 100vh;
+  padding: 10px
 }
 
 .app h1 {
