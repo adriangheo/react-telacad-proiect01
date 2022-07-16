@@ -4,7 +4,7 @@ import './UserItem.css'
 
 
 function UserItem(props) {
-    const {id, name, email, isGoldClient, salariu, imagine, getUserKey, getUserEmail} = props;
+    const {id, name, email, isGoldClient, salariu, imagine, getUserEmail} = props;
     
     // const getUserEmail = (email) => {
     //     console.log("email", email);
@@ -26,8 +26,6 @@ function UserItem(props) {
                 src={ imagine === undefined ? NoUserIcon : imagine }
                 alt="alt text"
             />
-            {/*  */}
-            <button onClick={()=>{getUserKey(id)}}>get user key</button>
             <button onClick={()=>{getUserEmail(email)}}>get user email</button>
 
         </div>

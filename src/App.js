@@ -111,13 +111,6 @@ class App extends React.Component {
     }));
   }
 
-  getUserKey = (key) => {
-    console.log("user key (it actually works :) :", key);
-
-    this.setState((prevState) => ({
-      users: prevState.users.filter((_, i) => i+1 !== key)
-    }));
-  }
 
   getUserEmail = (email) => {
     console.log("email", email);
@@ -144,7 +137,7 @@ class App extends React.Component {
         <button onClick={()=>{this.hidePostAndShowUsers()}}>ShowUsers</button>
      
         { this.state.isUserListVisible
-          ? <UserList users={this.state.users}  getUserKey={(key) => this.getUserKey(key)} getUserEmail={(email) => this.getUserEmail(email)}/> 
+          ? <UserList users={this.state.users}  getUserEmail={(email) => this.getUserEmail(email)}/> 
           : <PostList posts={this.state.posts}/> }
         
         <input type="color" onChange={(event) => this.changeColor(event)}/>
