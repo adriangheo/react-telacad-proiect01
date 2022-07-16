@@ -11,7 +11,9 @@ class App extends React.Component {
       background: 'white',
       color: 'black',
       users: [],
-      posts: []
+      posts: [],
+      isUserListVisible: true,
+      isPostsListVisible: true
     };
   }
 
@@ -73,6 +75,17 @@ class App extends React.Component {
     this.setState({color: event.target.value})
   }
   
+  switchUserListVisibility = () => {
+    console.log('isUserListVisible:', this.state.isUserListVisible)
+    let { isUserListVisible } = this.state;
+
+    if(isUserListVisible == true){
+      this.state.isUserListVisible = false
+    }else{
+      this.state.isUserListVisible = true
+    }
+    
+  }
 
   logAllUsersData(){
     this.state.users.map((user, index)=>{
@@ -86,6 +99,9 @@ class App extends React.Component {
     })
   }
 
+
+  function
+
   render() {
     return(
       <div className="app" style={{background: this.state.background, color: this.state.color}}>
@@ -97,7 +113,13 @@ class App extends React.Component {
         <label>Font Color: </label>
         <input id="FontColor" type="color" onChange={(event)=>this.handleColorChange(event)}></input>
         <UserAddForm submitAddForm={(event, name, email, isGoldClient, salariu, imagine) => this.submitAddForm(event, name, email, isGoldClient, salariu, imagine)}/>
-        <UserList users={this.state.users}/>
+        
+        <button onClick={()=>{this.switchUserListVisibility()}}>switchUserListVisibility</button>
+
+        { this.state.isUserListVisible
+          ? <UserList users={this.state.users}/> 
+          : false }
+        
         <input type="color" onChange={(event) => this.changeColor(event)}/>
         <PostList posts={this.state.posts}/>
       </div>
