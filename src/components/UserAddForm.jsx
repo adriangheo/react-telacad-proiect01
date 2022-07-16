@@ -46,7 +46,7 @@ class UserAddForm extends React.Component {
         const {name, email, isGoldClient, salariu, imagine} = this.state;
 
         return (
-            <div>
+            <div className='mb-3'>
                 <button onClick={()=>{this.logNewUsrData()}}>UserAddForm.jsx -- LogUsrData</button>
 
                 <form
@@ -54,45 +54,49 @@ class UserAddForm extends React.Component {
                 onSubmit={(event) => this.props.submitAddForm(event, name, email, isGoldClient, salariu, imagine)}
             >
                 <h2>Adauga utilizatori:</h2>
-                <label htmlFor="name">Nume:</label>
+                <label className='form-label' htmlFor="name">Nume:</label>
                 <input
                     type="text"
-                    name="name"
+                    id="name"
+                    className='form-control'
                     minLength={3}
                     onChange={(event) => this.updateName(event)}
                 />
-                <label htmlFor="email">Email:</label>
+                <label className='form-label' htmlFor="email">Email:</label>
                 <input
                     type="text"
-                    name="email"
+                    id="email"
+                    className='form-control'
                     onChange={(event) => this.updateEmail(event)}
                 />
-                <label htmlFor="is-gold-client">Client GOLD</label>
+                <label className='form-label' htmlFor="is-gold-client">Client GOLD:</label>
                 <input
                     type="checkbox"
-                    name="is-gold-client"
+                    id="is-gold-client"
                     value="true"
                     onChange={(event) => this.updateIsGoldClient(event)}
                 />
 
                 {/* agh start */}
-                <label htmlFor="salariu">Salariu:</label>
+                <label className='form-label' htmlFor="salariu">Salariu:</label>
                 <input
                     type="number"
                     id="salariu"
+                    className='form-control'
                     onChange={(event) => this.updateSalariu(event)}
                 />
 
-                <label htmlFor="imagine">URL Imagine:</label>
+                <label className='form-label' htmlFor="imagine">URL Imagine:</label>
                 <input
                     type="text"
                     id="imagine"
+                    className='form-control'
                     onChange={(event) => this.updateImagine(event)}
                 />
                 {/* agh end */}
 
 
-                <input type="submit" value="Introdu utilizatorul"/>
+                <input className="btn btn-primary" type="submit" value="Introdu utilizatorul"/>
                 </form>
             </div>
             

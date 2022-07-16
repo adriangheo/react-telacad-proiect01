@@ -11,7 +11,7 @@ function UserItem(props) {
     // }
 
     return (
-        <div className='UserItem'>
+        <div className='UserItem col-12 col-md-4'>
             <h3>{ name }</h3>
             <p>id {id}</p>
             <p>{ email }</p>
