@@ -47,7 +47,7 @@ class UserAddForm extends React.Component {
 
         return (
             <div className='mb-3'>
-                <button onClick={()=>{this.logNewUsrData()}}>UserAddForm.jsx -- LogUsrData</button>
+                <button className="btn btn-primary" onClick={()=>{this.logNewUsrData()}}>UserAddForm.jsx -- LogUsrData</button>
 
                 <form
                 className="user-add-form"

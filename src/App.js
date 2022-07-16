@@ -145,16 +145,16 @@ class App extends React.Component {
       <div className="app" style={{background: this.state.background, color: this.state.color}}>
         <h1>Admin panel - Proiectul 1</h1>
         {/* agh start */}
-        <button onClick={()=>{this.logAllUsersData()}}>App.js - Log all users</button>
+        <button className="btn btn-primary" onClick={()=>{this.logAllUsersData()}}>App.js - Log all users</button>
         {/* agh end */}
         <br/><br/>
-        <button onClick={()=>{this.removeUser(0)}}>RemoveUser1</button>
+        <button className="btn btn-primary" onClick={()=>{this.removeUser(0)}}>RemoveUser1</button>
         <label>Font Color: </label>
         <input id="FontColor" type="color" onChange={(event)=>this.handleColorChange(event)}></input>
         <UserAddForm submitAddForm={(event, name, email, isGoldClient, salariu, imagine) => this.submitAddForm(event, name, email, isGoldClient, salariu, imagine)}/>
         <br/><br/>
-        <button onClick={()=>{this.hideUsersAndShowPosts()}}>ShowPosts</button>
-        <button onClick={()=>{this.hidePostAndShowUsers()}}>ShowUsers</button>
+        <button className="btn btn-primary" onClick={()=>{this.hideUsersAndShowPosts()}}>ShowPosts</button>
+        <button className="btn btn-primary" onClick={()=>{this.hidePostAndShowUsers()}}>ShowUsers</button>
      
         { this.state.isUserListVisible
           ? <UserList users={this.state.users}  deleteUserByEmail={(email) => this.deleteUserByEmail(email)}/> 

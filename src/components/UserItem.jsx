@@ -25,7 +25,7 @@ function UserItem(props) {
                 src={ imagine === undefined ? NoUserIcon : imagine }
                 alt="alt text"
             />
-            <button onClick={()=>{deleteUserByEmail(email)}}>Delete User</button>
+            <button className="btn btn-primary"  onClick={()=>{deleteUserByEmail(email)}}>Delete User</button>
 
         </div>
     );
