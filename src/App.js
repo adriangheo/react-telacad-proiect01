@@ -115,7 +115,7 @@ class App extends React.Component {
     console.log("user key (it actually works :) :", key);
 
     this.setState((prevState) => ({
-      users: prevState.users.filter((_, i) => i !== key)
+      users: prevState.users.filter((_, i) => i+1 !== key)
     }));
   }
 
