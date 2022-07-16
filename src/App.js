@@ -77,16 +77,16 @@ class App extends React.Component {
 
 
   hideUsersAndShowPosts = () => {
-    let { isUserListVisible } = this.state;
-    if(isUserListVisible === false){
-      this.setState({isUserListVisible: true, isPostsListVisible: false})
+    let { isPostsListVisible } = this.state;
+    if(isPostsListVisible === false){
+      this.setState({isUserListVisible: false, isPostsListVisible: true})
     }
   }
 
   hidePostAndShowUsers = () => {
-    let { isPostsListVisible } = this.state;
-    if(isPostsListVisible === false){
-      this.setState({isUserListVisible: false, isPostsListVisible: true})
+    let { isUserListVisible } = this.state;
+    if(isUserListVisible === false){
+      this.setState({isUserListVisible: true, isPostsListVisible: false})
     }
   }
 
