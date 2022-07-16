@@ -4,10 +4,10 @@ import './UserItem.css'
 
 
 function UserItem(props) {
-    const {id, name, email, isGoldClient, salariu, imagine, getUserKey} = props;
+    const {id, name, email, isGoldClient, salariu, imagine, getUserKey, getUserEmail} = props;
     
-    // const getUserKey = (key) => {
-    //     console.log("key",key)
+    // const getUserEmail = (email) => {
+    //     console.log("email", email);
     // }
 
     return (
@@ -28,6 +28,8 @@ function UserItem(props) {
             />
             {/*  */}
             <button onClick={()=>{getUserKey(id)}}>get user key</button>
+            <button onClick={()=>{getUserEmail(email)}}>get user email</button>
+
         </div>
     );
 }

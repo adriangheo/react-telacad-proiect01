@@ -119,7 +119,9 @@ class App extends React.Component {
     }));
   }
 
-
+  getUserEmail = (email) => {
+    console.log("email", email);
+  }
 
   render() {
     return(
@@ -138,7 +140,7 @@ class App extends React.Component {
         <button onClick={()=>{this.hidePostAndShowUsers()}}>ShowUsers</button>
      
         { this.state.isUserListVisible
-          ? <UserList users={this.state.users}  getUserKey={(key) => this.getUserKey(key)}/> 
+          ? <UserList users={this.state.users}  getUserKey={(key) => this.getUserKey(key)} getUserEmail={(email) => this.getUserEmail(email)}/> 
           : <PostList posts={this.state.posts}/> }
         
         <input type="color" onChange={(event) => this.changeColor(event)}/>

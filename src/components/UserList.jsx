@@ -3,7 +3,8 @@ import UserItem from './UserItem';
 import './UserList.css'
 
 function UserList(props) {
-    const { users, getUserKey } = props;
+    const { users, getUserKey, getUserEmail } = props;
+
 
 
 
@@ -21,6 +22,7 @@ function UserList(props) {
                     imagine={user.imagine }
                     key={ index }
                     getUserKey={(key) => getUserKey(key)}
+                    getUserEmail={(email) => getUserEmail(email)}
                     
                 />
             })}
