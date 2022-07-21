@@ -8,7 +8,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      background: 'lightskyblue',
+      background: '#f8f9fa',
       color: 'black',
       users: [],
       posts: [],
@@ -124,12 +124,12 @@ class App extends React.Component {
 
   render() {
     return(
-      <div className="app" style={{background: this.state.background, color: this.state.color}}>
-        <h1>Admin panel - Proiectul 1</h1>
+      <div className="app container " style={{background: this.state.background, color: this.state.color}}>
+        <h1 className='py-5'>Admin panel - Proiectul 1</h1>
 
-        <label htmlFor='FontColor' style={{marginRight: '6px'}}>Font Color: </label>
+        <label className='lead mb-4' htmlFor='FontColor' style={{marginRight: '6px'}}>Font Color: </label>
         <input id="FontColor" type="color" style={{marginRight: '16px'}} onChange={(event)=>this.handleColorChange(event)}></input>
-        <label htmlFor='background-color' style={{marginRight: '6px'}}>Backround Color: </label>
+        <label className='lead mb-4' htmlFor='background-color' style={{marginRight: '6px'}}>Backround Color: </label>
         <input id='background-color' type="color" onChange={(event) => this.changeColor(event)}/>
 
         <UserAddForm submitAddForm={(event, name, email, isGoldClient, salariu, imagine) => this.submitAddForm(event, name, email, isGoldClient, salariu, imagine)}/>

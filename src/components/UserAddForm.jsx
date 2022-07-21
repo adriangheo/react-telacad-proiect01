@@ -51,7 +51,7 @@ class UserAddForm extends React.Component {
                 className="user-add-form"
                 onSubmit={(event) => this.props.submitAddForm(event, name, email, isGoldClient, salariu, imagine)}
             >
-                <h2>Adauga utilizatori:</h2>
+                <h4>Adauga utilizatori:</h4>
                 <label className='form-label' htmlFor="name">Nume:</label>
                 <input
                     type="text"
